@@ -1,0 +1,42 @@
+#registration-form {
+  width: 1000px;
+  display: grid;
+  background: whitesmoke;
+  padding: 4px;
+}
+
+.inputs-container{
+  display: flex;
+  padding: 17px;
+}
+
+.big-text-area {
+  display: block;
+  margin: 3px;
+  width: 98%
+}
+
+.left-div-form {
+  float: left;
+  height: 20%;
+  width: 22%;
+}
+
+.right-div-form {
+  float: left;
+  height: 80%;
+  width: 78%;
+}
+
+.form-buttons {
+  float: right;
+  margin: 12px;
+}
+
+.app-title {
+  margin-bottom: 15px;
+}
+
+.form-buttons {
+  
+}

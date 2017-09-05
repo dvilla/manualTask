@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <meta charset="utf-8">
+    <title>Golf app</title>
+  </head>
+  <body>   
+    
+  <div id="registration-form">
+    <h2 class="app-title">Game party registration form</h2>
+    
+    <form class="golf-modal" action="index.html" method="post">
+    
+    <div class="inputs-container">
+      <div class="left-div-form">        
+        <select v-model="selected">
+          <option disabled value="">Please select a player</option>
+          <option value="Quentin T. Tarantino">Quentin T. Tarantino</option>
+          <option value="Martin D. Scorsese">Martin D. Scorsese</option>
+          <option value="Steven P. Spielberg">Steven P. Spielberg</option>
+          <option value="Christopher L. Nolan">Christopher L. Nolan</option>
+        </select>
+      </div>
+      <div class="right-div-form">
+        <input type="text" name="first-name" v-bind:value="stripName(selected)[0]" placeholder="First name">
+        <input type="text" name="middle-name"  v-bind:value="stripName(selected)[1]" placeholder="Middle name">
+        <input type="text" name="lastname-name"  v-bind:value="stripName(selected)[2]" placeholder="Last name">
+        <input type="text" name="suffix" value="" placeholder="Suffix">
+        <button v-on:click="addName(selected)" type="button" name="add-name">+</button>
+        <textarea class="big-text-area" name="all-golf-names" rows="8" cols="80"></textarea>      
+      </div>
+    </div>  
+      
+      <div class="form-buttons">
+        <button type="button" name="continue-button">Continue</button>
+        <button type="button" name="cancel-button">Cancel</button>
+      </div>
+      
+    </form>
+  </div>
+    
+  </body>
+  <script src="./vue.js"></script>
+  <script src="./component.js"></script>
+</html>
