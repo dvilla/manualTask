@@ -28,8 +28,13 @@
         <input type="text" name="middle-name"  v-bind:value="stripName(selected)[1]" placeholder="Middle name">
         <input type="text" name="lastname-name"  v-bind:value="stripName(selected)[2]" placeholder="Last name">
         <input type="text" name="suffix" value="" placeholder="Suffix">
-        <button v-on:click="addName(selected)" type="button" name="add-name">+</button>
-        <textarea class="big-text-area" name="all-golf-names" rows="8" cols="80"></textarea>      
+        <button v-on:click="addName(selected, allSelectedNames)" type="button" name="add-name">+</button>
+        <ul>
+          <li v-for="name in allSelectedNames">
+            {{ name }}
+          </li>
+        </ul>
+        </textarea>      
       </div>
     </div>  
       
