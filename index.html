@@ -17,10 +17,7 @@
       <div class="left-div-form">        
         <select v-model="selected">
           <option disabled value="">Please select a player</option>
-          <option value="Quentin T. Tarantino">Quentin T. Tarantino</option>
-          <option value="Martin D. Scorsese">Martin D. Scorsese</option>
-          <option value="Steven P. Spielberg">Steven P. Spielberg</option>
-          <option value="Christopher L. Nolan">Christopher L. Nolan</option>
+          <option v-for="player in players">{{ player }}</option>
         </select>
       </div>
       <div class="right-div-form">
@@ -34,7 +31,6 @@
             {{ name }}
           </li>
         </ul>
-        </textarea>      
       </div>
     </div>  
       
