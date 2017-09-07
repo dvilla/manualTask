@@ -5,7 +5,8 @@ var app = new Vue({
       "Quentin T. Tarantino",
       "Martin D. Scorsese",
       "Steven P. Spielberg",
-      "Christopher L. Nolan"
+      "Christopher L. Nolan",
+      "David J. Fincher"
     ],
     allSelectedNames: [],
     selected: '',
@@ -14,6 +15,11 @@ var app = new Vue({
     },
     addName: function(selected, allSelectedNames){
       allSelectedNames.push(selected)
+    }
+  },
+  computed: {
+    sortedPlayers: function(){
+      return this.players.sort();
     }
   }
 })

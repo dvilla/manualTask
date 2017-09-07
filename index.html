@@ -17,7 +17,8 @@
       <div class="left-div-form">        
         <select v-model="selected">
           <option disabled value="">Please select a player</option>
-          <option v-for="player in players">{{ player }}</option>
+          <option v-for="player in sortedPlayers">{{ player }}</option>
+          <option value="">Other</option>
         </select>
       </div>
       <div class="right-div-form">
