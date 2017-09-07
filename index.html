@@ -22,10 +22,10 @@
         </select>
       </div>
       <div class="right-div-form">
-        <input type="text" name="first-name" v-bind:value="stripName()[0]" placeholder="First name">
-        <input type="text" name="middle-name"  v-bind:value="stripName()[1]" placeholder="Middle name">
-        <input type="text" name="lastname-name"  v-bind:value="stripName()[2]" placeholder="Last name">
-        <input type="text" name="suffix" value="" placeholder="Suffix">
+        <input type="text" name="first-name" v-bind:value="stripName()[0]" placeholder="First name" disabled>
+        <input type="text" name="middle-name"  v-bind:value="stripName()[1]" placeholder="Middle name" disabled>
+        <input type="text" name="lastname-name"  v-bind:value="stripName()[2]" placeholder="Last name" disabled>
+        <input type="text" name="suffix" value="" placeholder="Suffix" disabled>
         <button v-on:click="addName(selected, allSelectedNames)" type="button" name="add-name">+</button>
         <ul>
           <li v-for="name in allSelectedNames">
