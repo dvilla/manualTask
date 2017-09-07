@@ -10,8 +10,8 @@ var app = new Vue({
     ],
     allSelectedNames: [],
     selected: '',
-    stripName: function(selected){
-      return selected.split(' ')
+    stripName: function(){
+      return this.selected.split(' ')
     },
     addName: function(selected, allSelectedNames){
       allSelectedNames.push(selected)
