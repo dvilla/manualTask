@@ -18,15 +18,24 @@
         <select v-model="selected">
           <option disabled value="">Please select a player</option>
           <option v-for="player in sortedPlayers">{{ player }}</option>
-          <option value="">Other</option>
+          <option value="other">Other</option>
         </select>
       </div>
       <div class="right-div-form">
-        <input type="text" name="first-name" v-bind:value="stripName()[0]" placeholder="First name" disabled>
-        <input type="text" name="middle-name"  v-bind:value="stripName()[1]" placeholder="Middle name" disabled>
-        <input type="text" name="lastname-name"  v-bind:value="stripName()[2]" placeholder="Last name" disabled>
-        <input type="text" name="suffix" value="" placeholder="Suffix" disabled>
-        <button v-on:click="addName(selected, allSelectedNames)" type="button" name="add-name">+</button>
+        <!-- <input v-else type="text" v-model="firstName" name="first-name" placeholder="First name"> -->
+        <template v-if="selected != 'other' ? true : false">
+          <input type="text" name="first-name" v-bind:value="stripName()[0]" placeholder="First name" disabled>
+          <input type="text" name="middle-name"  v-bind:value="stripName()[1]" placeholder="Middle name" disabled>
+          <input type="text" name="lastname-name"  v-bind:value="stripName()[2]" placeholder="Last name" disabled>
+          <input type="text" name="suffix" value="" placeholder="Suffix" disabled>
+        </template>
+        <template v-else>
+          <input type="text" name="first-name" v-model=firstName placeholder="First name">
+          <input type="text" name="middle-name"  v-model=middleName placeholder="Middle name">
+          <input type="text" name="lastname-name"  v-model=lastName placeholder="Last name">
+          <input type="text" name="suffix" value="" v-model=suffix placeholder="Suffix" disabled>
+        </template>
+        <button v-on:click="addName()" type="button" name="add-name">+</button>
         <ul>
           <li v-for="name in allSelectedNames">
             {{ name }}
