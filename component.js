@@ -21,6 +21,9 @@ var app = new Vue({
       if ( this.selected != "other" && this.selected != "" ) {
         this.allSelectedNames.push(this.selected);
       }
+      else if ( this.firstName === "" || this.lastName === ""){
+        alert('First name and last name are required');
+      }
       else {
         this.allSelectedNames.push(this.firstName + " " + this.middleName + " " + this.lastName);
         this.firstName = ""
