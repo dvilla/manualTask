@@ -23,7 +23,11 @@ var app = new Vue({
       }
       else {
         this.allSelectedNames.push(this.firstName + " " + this.middleName + " " + this.lastName);
+        this.firstName = ""
+        this.middleName = ""
+        this.lastName = ""
       }
+      this.selected = ""
     }
   },
   computed: {
